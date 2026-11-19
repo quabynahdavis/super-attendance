@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HomeView from "@/components/HomeView.vue"
+import { RouterView } from "vue-router"
 import PhoneFrame from "@/components/PhoneFrame.vue"
 </script>
 
 <template>
   <PhoneFrame>
-    <HomeView />
+    <RouterView />
   </PhoneFrame>
 </template>
