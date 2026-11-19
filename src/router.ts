@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "@/views/HomeView.vue"
+import LectureView from "@/views/LectureView.vue"
 import LoginView from "@/views/LoginView.vue"
 import VerifyView from "@/views/VerifyView.vue"
 
@@ -19,6 +20,7 @@ export const router = createRouter({
       component: VerifyView,
       props: true,
     },
+    { path: "/lecture", name: "lecture", component: LectureView },
     { path: "/:pathMatch(.*)*", redirect: "/" },
   ],
 })
