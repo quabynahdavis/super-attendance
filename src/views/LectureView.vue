@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Radio } from "@lucide/vue"
 import { computed, onUnmounted, ref } from "vue"
 import Screen from "@/components/Screen.vue"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
@@ -95,11 +96,25 @@ onUnmounted(stopTimers)
 
 <template>
   <Screen eyebrow="CSC 301 · Room 204" title="Today's lecture">
-    <div v-if="!live" class="flex flex-1 flex-col justify-end gap-3 px-5 pt-8 pb-8">
-      <p class="text-sm text-muted-foreground">
-        Students can check in once the session is live.
-      </p>
-      <Button class="w-full" @click="start">Start lecture</Button>
+    <div v-if="!live" class="flex flex-1 flex-col items-center justify-center gap-6 px-5 pb-10">
+      <button
+        type="button"
+        class="relative flex size-44 items-center justify-center"
+        aria-label="Start lecture"
+        @click="start"
+      >
+        <span class="bg-primary/20 absolute inset-0 animate-ping rounded-full" />
+        <span class="bg-primary/15 absolute inset-4 animate-ping rounded-full [animation-delay:500ms]" />
+        <span class="bg-primary text-primary-foreground relative flex size-28 items-center justify-center rounded-full">
+          <Radio class="size-10" />
+        </span>
+      </button>
+      <div class="flex flex-col gap-1 text-center">
+        <p class="font-medium">Start lecture</p>
+        <p class="text-sm text-muted-foreground">
+          Students can check in once the session is live.
+        </p>
+      </div>
     </div>
 
     <div v-else class="flex min-h-0 flex-1 flex-col gap-4 px-5 pt-6 pb-6">
