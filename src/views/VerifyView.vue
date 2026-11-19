@@ -91,7 +91,7 @@ const eyebrow = computed(() =>
       <Button
         v-else-if="done"
         class="mt-auto w-full"
-        @click="router.push({ name: 'home' })"
+        @click="router.push(role === 'lecturer' ? { name: 'lecture' } : { name: 'home' })"
       >
         Done
       </Button>
