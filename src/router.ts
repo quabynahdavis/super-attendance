@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
+import AttendView from "@/views/AttendView.vue"
 import HomeView from "@/views/HomeView.vue"
 import LectureView from "@/views/LectureView.vue"
 import LoginView from "@/views/LoginView.vue"
@@ -21,6 +22,7 @@ export const router = createRouter({
       props: true,
     },
     { path: "/lecture", name: "lecture", component: LectureView },
+    { path: "/attend", name: "attend", component: AttendView },
     { path: "/:pathMatch(.*)*", redirect: "/" },
   ],
 })
